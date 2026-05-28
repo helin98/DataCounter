@@ -188,12 +188,12 @@
     function exportText() {
         const date = new Date().toLocaleDateString();
         const rows = document.querySelectorAll("#table tr");
-        let txt = '';
+        let txt = date+', ';
         for (let i = 1; i < rows.length; i++) {
             const name = rows[i].cells[0].textContent;
             const c1 = rows[i].cells[1].textContent;
             const c2 = rows[i].cells[2].textContent;
-            txt += `${date}，${name} ${c1} ${c2}件\n`;
+            txt += `${name} ${c1}张板 ${c2}件，\n`;
         }
         document.getElementById('exportResult').textContent = txt;
     }
